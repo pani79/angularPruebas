@@ -1,0 +1,4 @@
+
+ng g c componentes/base --skip-tests --flat
+
+ng g c componentes/paginas/configuracion --skip-tests --flat
