@@ -2,3 +2,7 @@
 ng g c componentes/base --skip-tests --flat
 
 ng g c componentes/paginas/configuracion --skip-tests --flat
+
+ng g m modulos/xlsx
+ng g c modulos/xlsx/xlsxImportar --skip-tests --flat
+ng g s modulos/xlsx/xlsxService --skip-tests --flat
