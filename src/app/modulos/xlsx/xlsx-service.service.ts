@@ -105,6 +105,10 @@ export class XlsxServiceService {
 
       dataArray.push(dataObj);
     });
+    console.log('importDataFromCSVByType => salida ' + dataArray);
+    console.log('importDataFromCSVByType => salida[3] ' + JSON.parse(dataArray[3]) );
+    console.log('importDataFromCSVByType => salida[3] ' + JSON.stringify(dataArray[3]) );
+
 
     return dataArray;
   }
