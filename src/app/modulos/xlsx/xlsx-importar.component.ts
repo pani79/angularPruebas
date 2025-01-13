@@ -15,51 +15,7 @@ export class XlsxImportarComponent {
 
   constructor(private _csvService: XlsxServiceService) { }
 
-  onFileChange(event: any) {
-
-    try {
-      const file = event.target.files[0];
-      if (!file) {
-        console.error('No file selected');
-        return;
-      }
-      /* 
-      if (!file.name.endsWith('.xlsx') && !file.name.endsWith('.xls')) {
-        console.error('Only Excel files are supported');
-        return;
-      } 
-      */
   
-      const reader = new FileReader();
-      reader.onload = (e: any) => {
-        
-
-        try {
-          
-          console.log('Excel data:', e); 
-          let csv: string = reader.result as string;
-          console.log(csv);
-          /* 
-          const workbook = XLSX.read(e.target.result, { type: 'binary' });
-          const firstSheetName = workbook.SheetNames[0];
-          const worksheet = workbook.Sheets[firstSheetName];
-          this.excelData = XLSX.utils.sheet_to_json(worksheet, { raw: true });
-          console.log('Excel data:', this.excelData); 
-          */
-        } catch (error) {
-          console.error('Error parsing Excel file:', error);
-        }
-      };
-  
-      reader.onerror = (error) => {
-        console.error('Error reading file:', error);
-      };
-  
-      reader.readAsArrayBuffer(file);
-    } catch (error) {
-      console.error('Error handling file change event:', error);
-    }
-  }
 
   public async importDataFromCSVByType(event: any) {
     let fileContent = await this.getTextFromFile(event);

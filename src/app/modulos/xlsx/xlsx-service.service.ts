@@ -14,7 +14,8 @@ export class XlsxServiceService {
     let rowWithPropertyNames = propertyNames.join(',') + '\n';
 
     let csvContent = rowWithPropertyNames;
-
+    console.log('saveDataInCSV => csvContent ' + csvContent);
+    
     let rows: string[] = [];
 
     data.forEach((item) => {
@@ -67,6 +68,8 @@ export class XlsxServiceService {
   public importDataFromCSVByType(csvText: string, obj: any): Array<any> {
     const propertyNames = csvText.slice(0, csvText.indexOf('\n')).split(',');
     const dataRows = csvText.slice(csvText.indexOf('\n') + 1).split('\n');
+    console.log('importDataFromCSVByType => propertyNames ' + propertyNames);
+    console.log('importDataFromCSVByType => dataRows ' + dataRows);
 
     
     let dataArray: any[] = [];

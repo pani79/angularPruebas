@@ -2,27 +2,31 @@
 <p>
     https://medium.com/nerd-for-tech/import-and-export-data-in-csv-in-angular-3c004f502d39
 </p>
-<p>
-  https://code.tutsplus.com/how-to-upload-and-download-csv-files-with-angularjs--cms-31489t
-</p>
 
-<button>Importar cvs</button>
 
-<hr>
-<input type="file" (change)="onFileChange($event)" accept=".csv, .xls">
 
-<hr>
-<input #fileUpload [accept]="'.csv'" type="file" class="file-input" 
-  (change)="importDataFromCSVByType($event)" hidden="true">
+<!-- 
+  -->
+  
+  <hr>
+  <p>
+    https://code.tutsplus.com/how-to-upload-and-download-csv-files-with-angularjs--cms-31489t
+  </p>
+  
 <button (click)="fileUpload.click()"> Import from csv</button> 
+<input #fileUpload [accept]="'.csv'" type="file" class="file-input" (change)="importDataFromCSVByType($event)" hidden="true">
 <!-- 
 <hr>
-<input type="file" class="upload" (change)="changeListener($event.target.files)"> 
+
 -->
 
 <hr><hr>
 <div>data from csv</div>
-<div *ngFor="let item of imported"> {{item}}</div>
+<div *ngFor="let item of importedData"> {{item}} - {{item.record_id}}</div>
 <hr>
 <p>imported.length >> {{imported.length}}</p>
 <p>importedData.length >> {{importedData.length}}</p>
+
+<hr>
+<hr>
+<p>importedData >> {{importedData|json}}</p>
