@@ -1,0 +1,18 @@
+.table {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border: 1px solid lightblue;
+}
+
+.table > div {
+  display: flex;
+  flex-direction: row;
+  gap: 2px;
+  border: 1px solid blueviolet;
+}
+
+.table > div > * {
+  display: flex;
+  background-color: lightgreen;
+}

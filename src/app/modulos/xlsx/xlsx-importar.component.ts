@@ -24,14 +24,13 @@ export class XlsxImportarComponent {
       fileContent,
       new Transaction()
     );
-    console.log(this.importedData[127]);
-    console.log(this.importedData[128]);
-    console.log(this.importedData[129]);
+    console.log('RECIBO ' + this.importedData);
+    /* 
     this.importedData.forEach((item) => {
-      if (item.record_id !== undefined) {
-        this.imported.push(item);
-      }
-    })
+      console.log('RECIBO >> ' + item, ' >> ' + typeof item);
+      console.log('RECIBO >> > ' + Object.keys(item), ' >> ' + Object.values(item));
+    }) 
+    */
   }
 
   private async getTextFromFile(event:any){

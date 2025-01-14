@@ -75,16 +75,21 @@ export class XlsxServiceService {
     let dataArray: any[] = [];
     dataRows.forEach((row) => {
       let values = row.split(',');
+      console.log('dataObj values >> ' + values);
 
       let dataObj: any = new Object();
+
       for (let index = 0; index < propertyNames.length; index++) {
         const propertyName: string = propertyNames[index];
-
         let value: any = values[index];
+        
+        console.log('dataObj propertyName >> ' + propertyName);
+        console.log('dataObj value >> ' + typeof value + ' >> ' + value);
+        
+        /* 
         if (value === '') {
           value = null;
         }
-
 
         if (typeof obj[propertyName] === 'undefined') {
           dataObj[propertyName] = undefined;
@@ -100,14 +105,17 @@ export class XlsxServiceService {
         }
         else if (typeof obj[propertyName] === 'object') {
           console.error("do no have algorithm to convert object");
-        }
+        } 
+        */
+       
+        dataObj[propertyName] = value;
       }
 
+      console.log('dataObj >> ' + dataObj);
+      console.log('dataObj >> >> ' + Object.keys(dataObj).length + ' >> ' + Object.keys(dataObj));
+      console.log('dataObj.record_id >> ' + dataObj.record_id);
       dataArray.push(dataObj);
     });
-    console.log('importDataFromCSVByType => salida ' + dataArray);
-    console.log('importDataFromCSVByType => salida[3] ' + JSON.parse(dataArray[3]) );
-    console.log('importDataFromCSVByType => salida[3] ' + JSON.stringify(dataArray[3]) );
 
 
     return dataArray;

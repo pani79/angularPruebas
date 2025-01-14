@@ -22,7 +22,11 @@
 
 <hr><hr>
 <div>data from csv</div>
-<div *ngFor="let item of importedData"> {{item}} - {{item.record_id}}</div>
+<div class="table" *ngIf="importedData.length > 0">
+  <div *ngFor="let item of importedData">
+    <div *ngFor="let prop of item| keyvalue"> {{prop.key}} - {{prop.value}}</div>
+  </div>
+</div>
 <hr>
 <p>imported.length >> {{imported.length}}</p>
 <p>importedData.length >> {{importedData.length}}</p>
